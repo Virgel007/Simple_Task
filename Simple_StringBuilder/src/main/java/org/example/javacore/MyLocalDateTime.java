@@ -1,4 +1,4 @@
-package org.example;
+package org.example.javacore;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
