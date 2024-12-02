@@ -1,6 +1,10 @@
 package org.example;
 
+import org.example.collection.FilterImpl;
+import org.example.collection.FilterUtil;
+
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +29,22 @@ public class Main {
 
         MyLocalDateTime myLocalDateTime = new MyLocalDateTime(LocalDateTime.now());
         System.out.println(myLocalDateTime.getLocalDateTime());
+
+        FilterUtil filterUtil = new FilterUtil();
+
+        // Integer array filtering
+        Integer[] intArray = {1, 2, 3};
+        Integer[] filteredInts = (Integer[]) filterUtil.filter(intArray, new FilterImpl());
+        System.out.println("Filtered Integers: " + Arrays.toString(filteredInts));
+
+        // String array filtering
+        String[] strArray = {"one", "two", "three"};
+        String[] filteredStrings = (String[]) filterUtil.filter(strArray, new FilterImpl());
+        System.out.println("Filtered Strings: " + Arrays.toString(filteredStrings));
+
+        // Double array filtering
+        Double[] doubleArray = {1.1, 2.2, 3.3};
+        Double[] filteredDoubles = (Double[]) filterUtil.filter(doubleArray, new FilterImpl());
+        System.out.println("Filtered Doubles: " + Arrays.toString(filteredDoubles));
     }
 }
