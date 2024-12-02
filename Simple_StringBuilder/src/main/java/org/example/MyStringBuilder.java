@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MyStringBuilder {
     private StringBuilder content;
-    private List<StringBuilder> snapshots;
+    private final List<StringBuilder> snapshots;
 
     public MyStringBuilder() {
         this.content = new StringBuilder();
