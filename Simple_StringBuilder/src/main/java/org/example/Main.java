@@ -1,5 +1,7 @@
 package org.example;
 
+import java.time.LocalDateTime;
+
 public class Main {
     public static void main(String[] args) {
         MyStringBuilder sb = new MyStringBuilder();
@@ -20,5 +22,8 @@ public class Main {
 
         sb.insert(5, "!");
         System.out.println(sb.toString());
+
+        MyLocalDateTime myLocalDateTime = new MyLocalDateTime(LocalDateTime.now());
+        System.out.println(myLocalDateTime.getLocalDateTime());
     }
 }
