@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.collection.CountOfElements;
 import org.example.collection.FilterImpl;
 import org.example.collection.FilterUtil;
 
@@ -46,5 +47,9 @@ public class Main {
         Double[] doubleArray = {1.1, 2.2, 3.3};
         Double[] filteredDoubles = (Double[]) filterUtil.filter(doubleArray, new FilterImpl());
         System.out.println("Filtered Doubles: " + Arrays.toString(filteredDoubles));
+
+        CountOfElements countOfElements = new CountOfElements();
+        String[] strArray2 = {"one", "two", "three", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "four", "five", "six", "seven", "ten", "eleven", "twelve", "eleven", "twelve"};
+        System.out.println("Count of elements in array: " + countOfElements.countOfElements(strArray2));
     }
 }
