@@ -1,4 +1,4 @@
-package org.example.councurrency.stream.random;
+package org.example.stream.random;
 
 import java.util.Comparator;
 import java.util.List;
@@ -14,6 +14,7 @@ public class StreamCollectorsExample {
                 new Order("Tablet", 500.0),
                 new Order("Smartphone", 900.0)
         );
+
         Map<String, Double> productCostMap = orders.stream()
                 .collect(Collectors.groupingBy(
                         Order::getProduct,
