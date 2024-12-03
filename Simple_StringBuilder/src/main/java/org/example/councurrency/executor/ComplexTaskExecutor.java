@@ -4,10 +4,6 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-// Создайте класс ComplexTaskExecutor, в котором будет использоваться
-// CyclicBarrier и ExecutorService для синхронизации выполнения задач.
-// Реализуйте метод executeTasks(int numberOfTasks), который создает пул потоков
-// и назначает каждому потоку экземпляр сложной задачи для выполнения.
 public class ComplexTaskExecutor {
     private ComplexTask task;
 
@@ -23,8 +19,8 @@ public class ComplexTaskExecutor {
             final int part = i + 1;
             executor.submit(() -> {
                 try {
+                    task.execute(part);
                     barrier.await();
-                    task.executePart(part);
                 } catch (Exception e) {
                     Thread.currentThread().interrupt();
                 }
